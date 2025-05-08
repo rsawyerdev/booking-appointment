@@ -1,3 +1,4 @@
+import ConfirmationModal from '@/components/ConfirmationModal';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import { useState } from 'react';
 import {
@@ -12,11 +13,17 @@ import {
 import { useProviderStore } from '../store/providerStore';
 
 export default function HomeScreen() {
+  const [modalVisible, setModalVisible] = useState(false);
   const [appointmentData, setAppointmentData] = useState({
     name: '',
     time: '',
   });
   const { providers } = useProviderStore();
+
+  const setAppointment = (provider: string, time: string) => {
+    setAppointmentData({ name: provider, time: time });
+    setModalVisible(true);
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -25,6 +32,8 @@ export default function HomeScreen() {
         ListHeaderComponent={
           <View>
             <Text>Make an appointment</Text>
+            <Text>Choose a date to see availability</Text>
+            <Text>NEXT AVAILABLE</Text>
           </View>
         }
         renderItem={({ item }) => (
@@ -40,9 +49,7 @@ export default function HomeScreen() {
                   <Pressable
                     key={index}
                     style={styles.time}
-                    onPress={() => {
-                      setAppointmentData({ name: item.name, time: time });
-                    }}
+                    onPress={() => setAppointment(item.name, time)}
                   >
                     <Text>{time}</Text>
                   </Pressable>
@@ -51,6 +58,11 @@ export default function HomeScreen() {
             </View>
           </View>
         )}
+      />
+      <ConfirmationModal
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+        appointmentData={appointmentData}
       />
     </SafeAreaView>
   );
