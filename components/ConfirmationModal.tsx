@@ -1,15 +1,18 @@
+import { useProviderStore } from '@/store/providerStore';
 import { router } from 'expo-router';
 import { Button, Modal, Pressable, Text, View } from 'react-native';
 
 export default function ConfirmationModal(props: any) {
   const { modalVisible, setModalVisible, appointmentData } = props;
-
+  const { updateProviders } = useProviderStore();
+  const { time, name, providerID, timeIndex } = appointmentData;
   const confirm = () => {
+    updateProviders(providerID, timeIndex);
     router.navigate({
       pathname: '/confirmation',
       params: {
-        bookingTime: appointmentData.time,
-        provider: appointmentData.name,
+        bookingTime: time,
+        provider: name,
       },
     });
     setModalVisible(false);
@@ -51,8 +54,7 @@ export default function ConfirmationModal(props: any) {
           }}
         >
           <Text>
-            Do you want to book an appointment at {appointmentData.time} with
-            {appointmentData.name}
+            Do you want to book an appointment at {time} with {name}
           </Text>
           <Button title='Cancel' onPress={() => setModalVisible(false)} />
           <Button title='Confirm' onPress={confirm} />
