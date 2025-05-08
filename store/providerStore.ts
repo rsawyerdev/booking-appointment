@@ -1,6 +1,7 @@
-import { Providers } from '@/constants/Providers';
 import { Provider } from '@/types/types';
 import { create } from 'zustand';
+
+const providers = require('../constants/providers.json');
 
 interface ProviderState {
   providers: Provider[];
@@ -8,7 +9,7 @@ interface ProviderState {
 }
 
 export const useProviderStore = create<ProviderState>()((set) => ({
-  providers: Providers,
+  providers: providers,
   updateProviders: (newProviders: Provider[]) => {
     set({ providers: newProviders });
   },
