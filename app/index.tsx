@@ -17,11 +17,23 @@ export default function HomeScreen() {
   const [appointmentData, setAppointmentData] = useState({
     name: '',
     time: '',
+    providerID: NaN,
+    timeIndex: NaN,
   });
   const { providers } = useProviderStore();
 
-  const setAppointment = (provider: string, time: string) => {
-    setAppointmentData({ name: provider, time: time });
+  const setAppointment = (
+    provider: string,
+    time: string,
+    providerID: number,
+    timeIndex: number
+  ) => {
+    setAppointmentData({
+      name: provider,
+      time: time,
+      providerID: providerID,
+      timeIndex: timeIndex,
+    });
     setModalVisible(true);
   };
 
@@ -49,7 +61,9 @@ export default function HomeScreen() {
                   <Pressable
                     key={index}
                     style={styles.time}
-                    onPress={() => setAppointment(item.name, time)}
+                    onPress={() =>
+                      setAppointment(item.name, time, item.id, index)
+                    }
                   >
                     <Text>{time}</Text>
                   </Pressable>

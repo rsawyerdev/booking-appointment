@@ -5,12 +5,14 @@ const providers = require('../constants/providers.json');
 
 interface ProviderState {
   providers: Provider[];
-  updateProviders: (newProviders: Provider[]) => void;
+  updateProviders: (providerID: number, timeIndex: number) => void;
 }
 
 export const useProviderStore = create<ProviderState>()((set) => ({
   providers: providers,
-  updateProviders: (newProviders: Provider[]) => {
-    set({ providers: newProviders });
+  updateProviders: (providerID: number, timeIndex: number) => {
+    providers
+      .find((provider: Provider) => provider.id == providerID)
+      .availability.splice(timeIndex, 1);
   },
 }));
