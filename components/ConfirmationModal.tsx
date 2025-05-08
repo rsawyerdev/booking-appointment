@@ -1,7 +1,19 @@
-import { Modal, Pressable, Text, View } from 'react-native';
+import { router } from 'expo-router';
+import { Button, Modal, Pressable, Text, View } from 'react-native';
 
 export default function ConfirmationModal(props: any) {
   const { modalVisible, setModalVisible, appointmentData } = props;
+
+  const confirm = () => {
+    router.navigate({
+      pathname: '/confirmation',
+      params: {
+        bookingTime: appointmentData.time,
+        provider: appointmentData.name,
+      },
+    });
+    setModalVisible(false);
+  };
   return (
     <Modal
       animationType='fade'
@@ -39,9 +51,11 @@ export default function ConfirmationModal(props: any) {
           }}
         >
           <Text>
-            Do you want to book an appointment at {appointmentData.time} with{' '}
+            Do you want to book an appointment at {appointmentData.time} with
             {appointmentData.name}
           </Text>
+          <Button title='Cancel' onPress={() => setModalVisible(false)} />
+          <Button title='Confirm' onPress={confirm} />
         </View>
       </Pressable>
     </Modal>
