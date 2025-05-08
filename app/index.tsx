@@ -1,6 +1,7 @@
 import ConfirmationModal from '@/components/ConfirmationModal';
+import { Availability } from '@/types/types';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   FlatList,
   Pressable,
@@ -14,6 +15,7 @@ import { useProviderStore } from '../store/providerStore';
 
 export default function HomeScreen() {
   const [modalVisible, setModalVisible] = useState(false);
+  const [dateSelected, setDate] = useState<string>('5/9/2025');
   const [appointmentData, setAppointmentData] = useState({
     name: '',
     time: '',
@@ -21,6 +23,16 @@ export default function HomeScreen() {
     timeIndex: NaN,
   });
   const { providers } = useProviderStore();
+
+  const [providersAvailable, setProvidersAvailable] = useState<{}>();
+
+  useEffect(() => {
+    if (!providersAvailable)
+      setProvidersAvailable(
+        providers.find((provider) => provider.date == dateSelected)
+          ?.availability
+      );
+  }, [providersAvailable, providers]);
 
   const setAppointment = (
     provider: string,
@@ -40,15 +52,18 @@ export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
-        data={providers}
+        data={providersAvailable}
         ListHeaderComponent={
           <View>
             <Text>Make an appointment</Text>
             <Text>Choose a date to see availability</Text>
             <Text>NEXT AVAILABLE</Text>
+            <Pressable>
+              <Text>{dateSelected}</Text>
+            </Pressable>
           </View>
         }
-        renderItem={({ item }) => (
+        renderItem={({ item }: { item: Availability }) => (
           <View style={styles.providerContainer}>
             <View style={styles.infoContainer}>
               <FontAwesome6 name='image-portrait' size={48} color='grey' />
@@ -57,7 +72,7 @@ export default function HomeScreen() {
             </View>
             <View style={styles.timeContainer}>
               <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                {item.availability.map((time, index) => (
+                {item.times.map((time: string, index: number) => (
                   <Pressable
                     key={index}
                     style={styles.time}
