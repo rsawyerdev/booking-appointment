@@ -5,9 +5,10 @@ import { Button, Modal, Pressable, Text, View } from 'react-native';
 export default function ConfirmationModal(props: any) {
   const { modalVisible, setModalVisible, appointmentData } = props;
   const { updateProviders } = useProviderStore();
-  const { time, name, providerID, timeIndex } = appointmentData;
+  const { time, name, providerID, timeIndex, date } = appointmentData;
+
   const confirm = () => {
-    updateProviders(providerID, timeIndex);
+    updateProviders(providerID, timeIndex, date);
     router.navigate({
       pathname: '/confirmation',
       params: {
@@ -22,7 +23,6 @@ export default function ConfirmationModal(props: any) {
       animationType='fade'
       transparent={true}
       visible={modalVisible}
-      // backdropColor={'rgba(0,0,0,.9)'}
       onRequestClose={() => {
         setModalVisible(!modalVisible);
       }}
