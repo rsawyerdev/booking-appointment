@@ -25,7 +25,8 @@ export default function HomeScreen() {
   });
   const { providers } = useProviderStore();
 
-  const [providersAvailable, setProvidersAvailable] = useState<{}>();
+  const [providersAvailable, setProvidersAvailable] =
+    useState<Availability[]>();
 
   useEffect(() => {
     if (!providersAvailable)
