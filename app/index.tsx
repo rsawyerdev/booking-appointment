@@ -1,3 +1,4 @@
+import CalendarModal from '@/components/CalendarModal';
 import ConfirmationModal from '@/components/ConfirmationModal';
 import { Availability } from '@/types/types';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
@@ -15,7 +16,7 @@ import { useProviderStore } from '../store/providerStore';
 
 export default function HomeScreen() {
   const [modalVisible, setModalVisible] = useState(false);
-  const [dateSelected, setDate] = useState<string>('5/9/2025');
+  const [dateSelected, setDate] = useState<Date>(new Date());
   const [appointmentData, setAppointmentData] = useState({
     name: '',
     time: '',
@@ -31,8 +32,10 @@ export default function HomeScreen() {
   useEffect(() => {
     if (!providersAvailable)
       setProvidersAvailable(
-        providers.find((provider) => provider.date == dateSelected)
-          ?.availability
+        providers.find(
+          (provider) =>
+            provider.date == dateSelected.toLocaleDateString('en-US')
+        )?.availability
       );
   }, [providersAvailable, providers]);
 
@@ -47,7 +50,7 @@ export default function HomeScreen() {
       time: time,
       providerID: providerID,
       timeIndex: timeIndex,
-      date: dateSelected,
+      date: dateSelected.toLocaleDateString('en-US'),
     });
     setModalVisible(true);
   };
@@ -60,9 +63,12 @@ export default function HomeScreen() {
           <View>
             <Text>Make an appointment</Text>
             <Text>Choose a date to see availability</Text>
-            <Text>NEXT AVAILABLE</Text>
             <Pressable>
-              <Text>{dateSelected}</Text>
+              <CalendarModal
+                dateSelected={dateSelected}
+                setDate={setDate}
+                setProvidersAvailable={setProvidersAvailable}
+              />
             </Pressable>
           </View>
         }

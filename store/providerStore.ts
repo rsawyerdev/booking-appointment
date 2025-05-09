@@ -16,7 +16,7 @@ export const useProviderStore = create<ProviderState>()((set) => ({
   providers: providers,
   updateProviders: (providerID: number, timeIndex: number, date: string) => {
     providers
-      .find((providers: Provider) => providers.date)
+      .find((providers: Provider) => providers.date == date)
       .availability.find(
         (provider: Availability) => provider.providerID == providerID
       )
