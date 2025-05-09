@@ -1,22 +1,36 @@
+import { useProviderStore } from '@/store/providerStore';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { useState } from 'react';
-import { Modal, Pressable, Text, View } from 'react-native';
+import { Alert, Modal, Pressable, Text, View } from 'react-native';
 
 export default function CalendarModal(props: any) {
   const { dateSelected, setDate, setProvidersAvailable } = props;
+  const { providers } = useProviderStore();
+
   const options = {
     weekday: 'long',
     year: 'numeric',
     month: 'long',
     day: 'numeric',
   };
+
   const [show, setShow] = useState(false);
 
   const onChange = (event: any, selectedDate: Date | undefined) => {
     const currentDate = selectedDate || dateSelected;
-    setShow(false);
-    setDate(currentDate);
-    setProvidersAvailable();
+    if (
+      providers.find(
+        ({ date }) => date == currentDate.toLocaleDateString('en-US')
+      )
+    ) {
+      setShow(false);
+      setDate(currentDate);
+      setProvidersAvailable();
+    } else {
+      Alert.alert(
+        'No providers are avilable on this day.  Please select a new day'
+      );
+    }
   };
 
   return (
@@ -50,6 +64,8 @@ export default function CalendarModal(props: any) {
               mode={'date'}
               display='inline'
               onChange={onChange}
+              maximumDate={new Date(2025, 4, 18)}
+              minimumDate={new Date(2025, 4, 9)}
             />
           </View>
         </Modal>
