@@ -47,7 +47,6 @@ export default function CalendarModal(props: any) {
         >
           <View
             style={{
-              // backgroundColor: 'rgba(0, 0, 0, 0.6)',
               marginTop: 120,
               marginLeft: 30,
               marginRight: 40,
