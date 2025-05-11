@@ -60,9 +60,11 @@ export default function AppointmentsScreen() {
       <FlatList
         data={providersAvailable}
         ListHeaderComponent={
-          <View>
-            <Text>Make an appointment</Text>
-            <Text>Choose a date to see availability</Text>
+          <View style={styles.headerContainer}>
+            <Text style={styles.headerText}>Schedule a visit</Text>
+            <Text style={styles.headerBody}>
+              Choose a date to see availability
+            </Text>
             <Pressable>
               <CalendarModal
                 dateSelected={dateSelected}
@@ -89,7 +91,7 @@ export default function AppointmentsScreen() {
                       setAppointment(item.name, time, item.providerID, index)
                     }
                   >
-                    <Text>{time}</Text>
+                    <Text style={styles.timeText}>{time}</Text>
                   </Pressable>
                 ))}
               </ScrollView>
@@ -108,13 +110,37 @@ export default function AppointmentsScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1 },
+  headerContainer: {
+    alignItems: 'center',
+    marginVertical: 12,
+  },
+  headerText: {
+    fontFamily: 'regular',
+    fontSize: 24,
+    paddingBottom: 8,
+    color: '#8ba49a',
+  },
+  headerBody: {
+    fontFamily: 'regular',
+    fontSize: 16,
+    paddingBottom: 12,
+    color: '#8ba49a',
+  },
   providerContainer: {
-    borderWidth: 1,
-    borderColor: 'rgba(0,0,0,.1)',
     padding: 12,
     margin: 12,
     borderRadius: 12,
+    backgroundColor: '#8ba49a',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
   },
+
   infoContainer: {
     flexDirection: 'row',
     paddingBottom: 12,
@@ -122,13 +148,24 @@ const styles = StyleSheet.create({
   providerName: {
     alignSelf: 'center',
     paddingLeft: 8,
+    fontFamily: 'bold',
+    color: '#d2c49e',
+    fontSize: 18,
   },
   timeContainer: { flexDirection: 'row' },
   time: {
-    borderWidth: 1,
-    borderColor: 'rgba(0,0,0,.1)',
+    backgroundColor: 'rgba(210,196,158,.8)',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
     borderRadius: 6,
     padding: 6,
-    marginHorizontal: 2,
+    margin: 6,
   },
+  timeText: { color: '#8ba49a', fontFamily: 'bold' },
 });
