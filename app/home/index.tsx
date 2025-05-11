@@ -16,9 +16,11 @@ export default function Home() {
       <View
         style={{
           alignItems: 'center',
-
+          justifyContent: 'space-around',
+          padding: 32,
           backgroundColor: '#cbded3',
-          flex: 0.5,
+          flex: 1,
+          marginVertical: 36,
           borderRadius: 4,
           shadowColor: '#000',
           shadowOffset: {
@@ -30,15 +32,30 @@ export default function Home() {
           elevation: 5,
         }}
       >
-        <Text style={{ fontFamily: 'regular' }}>Welcome to the home page </Text>
-        <MaterialIcons name='family-restroom' size={24} color='black' />
+        <Text style={{ fontFamily: 'bold', color: '#3b6255', fontSize: 24 }}>
+          Welcome home!
+        </Text>
+        <MaterialIcons name='family-restroom' size={100} color='#8ba49a' />
+        <Text
+          style={{
+            fontFamily: 'regular',
+            color: '#3b6255',
+            fontSize: 18,
+            maxWidth: 220,
+            textAlign: 'center',
+          }}
+        >
+          Book an appointment with your favorite provider
+        </Text>
       </View>
-      <Button
-        title='Book an appointment'
-        onButtonPress={() => router.push('/appointments')}
-        textColor='#e2dfda'
-        backgroundColor='#3b6255'
-      />
+      <View style={{ paddingBottom: 12 }}>
+        <Button
+          title='Book an appointment'
+          onButtonPress={() => router.push('/appointments')}
+          textColor='#e2dfda'
+          backgroundColor='#3b6255'
+        />
+      </View>
     </View>
   );
 }
