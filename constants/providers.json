@@ -1,50 +1,181 @@
 [
   {
-    "name": "Dr. Bob",
-    "id": 1,
+    "date": "5/9/2025",
+    "id": "1",
     "availability": [
-      "12:30 pm",
-      "1:30 pm",
-      "1:00 pm",
-      "12:30 pm",
-      "1:30 pm",
-      "1:00 pm",
-      "12:30 pm",
-      "1:30 pm",
-      "1:00 pm",
-      "12:30 pm",
-      "1:30 pm",
-      "1:00 pm"
+      {
+        "name": "Dr. Bob",
+        "providerID": 1,
+        "times": [
+          "12:30 pm",
+          "1:30 pm",
+          "1:00 pm",
+          "12:30 pm",
+          "1:30 pm",
+          "1:00 pm",
+          "12:30 pm",
+          "1:30 pm",
+          "1:00 pm",
+          "12:30 pm",
+          "1:30 pm",
+          "1:00 pm"
+        ]
+      },
+      {
+        "name": "Dr. Sally",
+        "providerID": 2,
+        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+      },
+      {
+        "name": "Dr. Nick",
+        "providerID": 3,
+        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+      },
+      {
+        "name": "Dr. Gayle",
+        "providerID": 4,
+        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+      },
+      {
+        "name": "Dr. Richard",
+        "providerID": 5,
+        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+      }
     ]
   },
   {
-    "name": "Dr. Sally",
-    "id": 2,
+    "date": "5/10/2025",
 
-    "availability": ["12:30 pm", "1:30 pm", "1:00 pm"]
+    "id": "2",
+
+    "availability": [
+      {
+        "name": "Dr. Bob",
+        "providerID": 1,
+
+        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+      }
+    ]
   },
   {
-    "name": "Dr. Gayle",
-    "id": 3,
+    "id": "3",
+    "date": "5/11/2025",
 
-    "availability": ["10:30 am", "1:30 pm", "1:00 pm"]
+    "availability": [
+      {
+        "name": "Dr. Bob",
+        "providerID": 1,
+
+        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+      }
+    ]
   },
   {
-    "name": "Dr. Richard",
-    "id": 4,
+    "id": "4",
+    "date": "5/12/2025",
 
-    "availability": ["12:30 pm", "1:30 pm", "1:00 pm"]
+    "availability": [
+      {
+        "name": "Dr. Bob",
+        "providerID": 1,
+
+        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+      }
+    ]
   },
   {
-    "name": "Dr. Nick",
-    "id": 5,
+    "id": "3",
+    "date": "5/13/2025",
 
-    "availability": ["12:30 pm", "1:30 pm", "1:00 pm"]
+    "availability": [
+      {
+        "name": "Dr. Bob",
+        "providerID": 1,
+
+        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+      }
+    ]
   },
   {
-    "name": "Dr. Susan",
-    "id": 6,
+    "id": "3",
+    "date": "5/14/2025",
 
-    "availability": ["12:30 pm", "1:30 pm", "1:00 pm"]
+    "availability": [
+      {
+        "name": "Dr. Bob",
+        "providerID": 1,
+
+        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "date": "5/15/2025",
+
+    "availability": [
+      {
+        "name": "Dr. Bob",
+        "providerID": 1,
+
+        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+      }
+    ]
+  },
+  {
+    "date": "5/16/2025",
+    "id": "1",
+    "availability": [
+      {
+        "name": "Dr. Sally",
+        "providerID": 2,
+        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+      },
+      {
+        "name": "Dr. Nick",
+        "providerID": 3,
+        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+      },
+      {
+        "name": "Dr. Gayle",
+        "providerID": 4,
+        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+      },
+      {
+        "name": "Dr. Richard",
+        "providerID": 5,
+        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+      }
+    ]
+  },
+  {
+    "date": "5/17/2025",
+    "id": "1",
+    "availability": [
+      {
+        "name": "Dr. Bob",
+        "providerID": 1,
+        "times": [
+          "12:30 pm",
+          "1:30 pm",
+          "1:00 pm",
+          "1:30 pm",
+          "1:00 pm",
+          "12:30 pm",
+          "1:30 pm",
+          "1:00 pm"
+        ]
+      },
+      {
+        "name": "Dr. Gayle",
+        "providerID": 4,
+        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+      },
+      {
+        "name": "Dr. Richard",
+        "providerID": 5,
+        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+      }
+    ]
   }
 ]
