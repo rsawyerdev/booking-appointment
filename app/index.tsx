@@ -1,18 +1,8 @@
-import CalendarModal from '@/components/CalendarModal';
-import ConfirmationModal from '@/components/ConfirmationModal';
 import { Availability } from '@/types/types';
-import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import { useEffect, useState } from 'react';
-import {
-  FlatList,
-  Pressable,
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 import { useProviderStore } from '../store/providerStore';
+import Home from './home';
 
 export default function HomeScreen() {
   const [modalVisible, setModalVisible] = useState(false);
@@ -57,51 +47,7 @@ export default function HomeScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <FlatList
-        data={providersAvailable}
-        ListHeaderComponent={
-          <View>
-            <Text>Make an appointment</Text>
-            <Text>Choose a date to see availability</Text>
-            <Pressable>
-              <CalendarModal
-                dateSelected={dateSelected}
-                setDate={setDate}
-                setProvidersAvailable={setProvidersAvailable}
-              />
-            </Pressable>
-          </View>
-        }
-        renderItem={({ item }: { item: Availability }) => (
-          <View style={styles.providerContainer}>
-            <View style={styles.infoContainer}>
-              <FontAwesome6 name='image-portrait' size={48} color='grey' />
-
-              <Text style={styles.providerName}>{item.name}</Text>
-            </View>
-            <View style={styles.timeContainer}>
-              <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                {item.times.map((time: string, index: number) => (
-                  <Pressable
-                    key={index}
-                    style={styles.time}
-                    onPress={() =>
-                      setAppointment(item.name, time, item.providerID, index)
-                    }
-                  >
-                    <Text>{time}</Text>
-                  </Pressable>
-                ))}
-              </ScrollView>
-            </View>
-          </View>
-        )}
-      />
-      <ConfirmationModal
-        modalVisible={modalVisible}
-        setModalVisible={setModalVisible}
-        appointmentData={appointmentData}
-      />
+      <Home />
     </SafeAreaView>
   );
 }
