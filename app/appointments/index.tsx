@@ -58,16 +58,13 @@ export default function AppointmentsScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
+      <Pressable onPress={() => router.back()} style={styles.backButton}>
+        <FontAwesome6 name='laptop-medical' size={24} color='#3b6255' />
+      </Pressable>
       <FlatList
         data={providersAvailable}
         ListHeaderComponent={
           <View style={styles.headerContainer}>
-            <Pressable
-              onPress={() => router.back()}
-              style={{ alignSelf: 'flex-start', paddingLeft: 12 }}
-            >
-              <FontAwesome6 name='laptop-medical' size={24} color='#3b6255' />
-            </Pressable>
             <Text style={styles.headerText}>Schedule a visit</Text>
             <Text style={styles.headerBody}>
               Choose a date to see availability
@@ -121,6 +118,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginVertical: 12,
   },
+  backButton: { alignSelf: 'flex-start', paddingLeft: 12, paddingTop: 12 },
   headerText: {
     fontFamily: 'regular',
     fontSize: 24,
@@ -174,5 +172,5 @@ const styles = StyleSheet.create({
     padding: 6,
     margin: 6,
   },
-  timeText: { color: '#8ba49a', fontFamily: 'bold' },
+  timeText: { color: '#3b6255', fontFamily: 'bold' },
 });
