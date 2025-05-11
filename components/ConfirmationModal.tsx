@@ -15,6 +15,7 @@ export default function ConfirmationModal(props: any) {
       params: {
         bookingTime: time,
         provider: name,
+        bookingDate: date,
       },
     });
     setModalVisible(false);

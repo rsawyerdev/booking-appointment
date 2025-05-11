@@ -39,5 +39,5 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 5,
   },
-  buttonText: { padding: 12, fontFamily: 'regular' },
+  buttonText: { padding: 12, fontFamily: 'regular', textAlign: 'center' },
 });
