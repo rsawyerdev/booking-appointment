@@ -2,6 +2,7 @@ import CalendarModal from '@/components/CalendarModal';
 import ConfirmationModal from '@/components/ConfirmationModal';
 import { Availability } from '@/types/types';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
+import { router } from 'expo-router';
 import { useEffect, useState } from 'react';
 import {
   FlatList,
@@ -61,6 +62,12 @@ export default function AppointmentsScreen() {
         data={providersAvailable}
         ListHeaderComponent={
           <View style={styles.headerContainer}>
+            <Pressable
+              onPress={() => router.back()}
+              style={{ alignSelf: 'flex-start', paddingLeft: 12 }}
+            >
+              <FontAwesome6 name='laptop-medical' size={24} color='#3b6255' />
+            </Pressable>
             <Text style={styles.headerText}>Schedule a visit</Text>
             <Text style={styles.headerBody}>
               Choose a date to see availability

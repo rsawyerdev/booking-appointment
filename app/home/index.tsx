@@ -1,5 +1,5 @@
 import { Button } from '@/components/Button';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import { router } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
 
@@ -8,7 +8,7 @@ export default function Home() {
     <View style={styles.container}>
       <View style={styles.welcomeContainer}>
         <Text style={styles.headerText}>Welcome home!</Text>
-        <MaterialIcons name='family-restroom' size={100} color='#8ba49a' />
+        <FontAwesome6 name='laptop-medical' size={100} color='#8ba49a' />
         <Text style={styles.bodyText}>
           Book an appointment with your favorite provider
         </Text>
