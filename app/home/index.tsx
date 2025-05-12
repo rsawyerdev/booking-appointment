@@ -1,9 +1,29 @@
 import { Button } from '@/components/Button';
+import { useProviderStore } from '@/store/providerStore';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import { router } from 'expo-router';
-import { StyleSheet, Text, View } from 'react-native';
+import { useEffect } from 'react';
+import { AccessibilityInfo, StyleSheet, Text, View } from 'react-native';
 
 export default function Home() {
+  const { setScreenReaderEnabled } = useProviderStore();
+
+  useEffect(() => {
+    const screenReaderChangedSubscription = AccessibilityInfo.addEventListener(
+      'screenReaderChanged',
+      (isScreenReaderEnabled) => {
+        setScreenReaderEnabled(isScreenReaderEnabled);
+      }
+    );
+
+    AccessibilityInfo.isScreenReaderEnabled().then((isScreenReaderEnabled) => {
+      setScreenReaderEnabled(isScreenReaderEnabled);
+    });
+
+    return () => {
+      screenReaderChangedSubscription.remove();
+    };
+  }, []);
   return (
     <View style={styles.container}>
       <View style={styles.welcomeContainer}>
@@ -13,7 +33,11 @@ export default function Home() {
           Book an appointment with your favorite provider
         </Text>
       </View>
-      <View style={styles.buttonContainer}>
+      <View
+        style={styles.buttonContainer}
+        accessible
+        accessibilityRole='button'
+      >
         <Button
           title='Book an appointment'
           onButtonPress={() => router.push('/appointments')}
