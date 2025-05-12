@@ -12,7 +12,7 @@ interface ProviderState {
   ) => void;
 }
 
-export const useProviderStore = create<ProviderState>()((set) => ({
+export const useProviderStore = create<ProviderState>()(() => ({
   providers: providers,
   updateProviders: (providerID: number, timeIndex: number, date: string) => {
     providers
