@@ -58,8 +58,14 @@ export default function AppointmentsScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Pressable onPress={() => router.back()} style={styles.backButton}>
-        <FontAwesome6 name='laptop-medical' size={24} color='#3b6255' />
+      <Pressable
+        onPress={() => router.back()}
+        style={styles.backButton}
+        accessible
+        accessibilityRole='button'
+        accessibilityLabel='Back button'
+      >
+        <FontAwesome6 name='laptop-medical' size={24} color='#8ba49a' />
       </Pressable>
       <FlatList
         data={providersAvailable}
@@ -94,6 +100,8 @@ export default function AppointmentsScreen() {
                     onPress={() =>
                       setAppointment(item.name, time, item.providerID, index)
                     }
+                    accessible
+                    accessibilityRole='button'
                   >
                     <Text style={styles.timeText}>{time}</Text>
                   </Pressable>
