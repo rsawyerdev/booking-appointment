@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
   },
   backButton: { alignSelf: 'flex-start', paddingLeft: 12, paddingTop: 12 },
   headerText: {
-    fontFamily: 'regular',
+    fontFamily: 'bold',
     fontSize: 24,
     paddingBottom: 8,
     color: '#8ba49a',
