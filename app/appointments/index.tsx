@@ -2,10 +2,10 @@ import CalendarModal from '@/components/CalendarModal';
 import ConfirmationModal from '@/components/ConfirmationModal';
 import { Availability } from '@/types/types';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
+import { FlashList } from '@shopify/flash-list';
 import { router } from 'expo-router';
 import { useEffect, useState } from 'react';
 import {
-  FlatList,
   Pressable,
   SafeAreaView,
   ScrollView,
@@ -67,8 +67,9 @@ export default function AppointmentsScreen() {
       >
         <FontAwesome6 name='laptop-medical' size={24} color='#8ba49a' />
       </Pressable>
-      <FlatList
+      <FlashList
         data={providersAvailable}
+        estimatedItemSize={5}
         ListHeaderComponent={
           <View style={styles.headerContainer}>
             <Text style={styles.headerText}>Schedule a visit</Text>
