@@ -6,7 +6,7 @@ import { Alert, Modal, Pressable, StyleSheet, Text, View } from 'react-native';
 
 export default function CalendarModal(props: any) {
   const { dateSelected, setDate, setProvidersAvailable } = props;
-  const { providers } = useProviderStore();
+  const { providers, screenReaderEnabled } = useProviderStore();
 
   const options = {
     weekday: 'long',
@@ -45,7 +45,10 @@ export default function CalendarModal(props: any) {
         >
           <View style={styles.calendarContainer}>
             <DateTimePicker
-              style={styles.datePicker}
+              style={[
+                styles.datePicker,
+                { backgroundColor: screenReaderEnabled ? 'black' : 'white' },
+              ]}
               testID='dateTimePicker'
               value={dateSelected}
               mode={'date'}
@@ -57,7 +60,16 @@ export default function CalendarModal(props: any) {
           </View>
         </Modal>
       ) : (
-        <Pressable onPress={() => setShow(true)} style={styles.container}>
+        <Pressable
+          onPress={() => setShow(true)}
+          style={styles.container}
+          accessible
+          accessibilityLabel={`The date selected is ${dateSelected.toLocaleDateString(
+            'en-US',
+            options
+          )}. Select here to change the date`}
+          accessibilityRole='button'
+        >
           <Text style={styles.closedModalText}>
             {dateSelected
               ? dateSelected.toLocaleDateString('en-US', options)

@@ -5,7 +5,7 @@ import { Button } from './Button';
 
 export default function ConfirmationModal(props: any) {
   const { modalVisible, setModalVisible, appointmentData } = props;
-  const { updateProviders } = useProviderStore();
+  const { updateProviders, screenReaderEnabled } = useProviderStore();
   const { time, name, providerID, timeIndex, date } = appointmentData;
 
   const confirm = () => {
@@ -29,32 +29,72 @@ export default function ConfirmationModal(props: any) {
         setModalVisible(!modalVisible);
       }}
     >
-      <Pressable
-        style={styles.container}
-        onPress={() => setModalVisible(false)}
-      >
-        <View style={styles.contentContainer}>
-          <Text style={styles.text}>
-            Do you want to book an appointment at {time} on {date} with {name}?
-          </Text>
-          <View style={styles.buttonContainer}>
-            <Button
-              title='Cancel'
-              onButtonPress={() => setModalVisible(false)}
-              textColor='#e2dfda'
-              backgroundColor='#3b6255'
-              styleProps={{ margin: 8 }}
-            />
-            <Button
-              title='Confirm'
-              onButtonPress={confirm}
-              textColor='#e2dfda'
-              backgroundColor='#3b6255'
-              styleProps={{ margin: 8 }}
-            />
+      {screenReaderEnabled ? (
+        <View style={styles.container}>
+          <View style={styles.contentContainer}>
+            <Text style={styles.text}>
+              Do you want to book an appointment at {time} on {date} with {name}
+              ?
+            </Text>
+            <View style={styles.buttonContainer}>
+              <View accessible accessibilityRole='button'>
+                <Button
+                  title='Cancel'
+                  onButtonPress={() => setModalVisible(false)}
+                  textColor='#e2dfda'
+                  backgroundColor='#3b6255'
+                  styleProps={{ margin: 8 }}
+                />
+              </View>
+              <View accessible accessibilityRole='button'>
+                <Button
+                  title='Confirm'
+                  onButtonPress={confirm}
+                  textColor='#e2dfda'
+                  backgroundColor='#3b6255'
+                  styleProps={{ margin: 8 }}
+                />
+              </View>
+            </View>
           </View>
         </View>
-      </Pressable>
+      ) : (
+        <Pressable
+          style={styles.container}
+          onPress={() => setModalVisible(false)}
+        >
+          <View style={styles.contentContainer}>
+            <Text style={styles.text}>
+              Do you want to book an appointment at {time} on {date} with {name}
+              ?
+            </Text>
+            <View style={styles.buttonContainer}>
+              <View accessible accessibilityRole='button'>
+                <Button
+                  title='Cancel'
+                  onButtonPress={() => setModalVisible(false)}
+                  textColor='#e2dfda'
+                  backgroundColor='#3b6255'
+                  styleProps={{ margin: 8 }}
+                  accessible
+                  accessibilityRole='button'
+                />
+              </View>
+              <View accessible accessibilityRole='button'>
+                <Button
+                  title='Confirm'
+                  onButtonPress={confirm}
+                  textColor='#e2dfda'
+                  backgroundColor='#3b6255'
+                  styleProps={{ margin: 8 }}
+                  accessible
+                  accessibilityRole='button'
+                />
+              </View>
+            </View>
+          </View>
+        </Pressable>
+      )}
     </Modal>
   );
 }
