@@ -36,6 +36,21 @@
         "name": "Dr. Richard",
         "providerID": 5,
         "times": ["12:30 pm", "1:30 pm", "5:00 pm"]
+      },
+      {
+        "name": "Dr. Nancy",
+        "providerID": 6,
+        "times": ["10:30am", "11:00am", "12:30 pm", "1:30 pm", "4:00 pm"]
+      },
+      {
+        "name": "Dr. Patton",
+        "providerID": 7,
+        "times": ["12:30 pm", "1:30 pm", "2:00 pm"]
+      },
+      {
+        "name": "Dr. Vicky",
+        "providerID": 8,
+        "times": ["12:30 pm", "1:30 pm", "5:00 pm"]
       }
     ]
   },
@@ -50,6 +65,21 @@
         "providerID": 1,
 
         "times": ["12:30 pm", "1:30 pm", "4:00 pm"]
+      },
+      {
+        "name": "Dr. Nick",
+        "providerID": 3,
+        "times": ["10:30am", "11:00am", "12:30 pm", "1:30 pm", "4:00 pm"]
+      },
+      {
+        "name": "Dr. Gayle",
+        "providerID": 4,
+        "times": ["12:30 pm", "1:30 pm", "2:00 pm"]
+      },
+      {
+        "name": "Dr. Richard",
+        "providerID": 5,
+        "times": ["12:30 pm", "1:30 pm", "5:00 pm"]
       }
     ]
   },
@@ -63,6 +93,36 @@
         "providerID": 1,
 
         "times": ["12:30 pm", "2:30 pm", "6:00 pm"]
+      },
+      {
+        "name": "Dr. Nick",
+        "providerID": 3,
+        "times": ["10:30am", "11:00am", "12:30 pm", "1:30 pm", "4:00 pm"]
+      },
+      {
+        "name": "Dr. Gayle",
+        "providerID": 4,
+        "times": ["12:30 pm", "1:30 pm", "2:00 pm"]
+      },
+      {
+        "name": "Dr. Richard",
+        "providerID": 5,
+        "times": ["12:30 pm", "1:30 pm", "5:00 pm"]
+      },
+      {
+        "name": "Dr. Nancy",
+        "providerID": 6,
+        "times": ["10:30am", "11:00am", "12:30 pm", "1:30 pm", "4:00 pm"]
+      },
+      {
+        "name": "Dr. Patton",
+        "providerID": 7,
+        "times": ["12:30 pm", "1:30 pm", "2:00 pm"]
+      },
+      {
+        "name": "Dr. Vicky",
+        "providerID": 8,
+        "times": ["12:30 pm", "1:30 pm", "5:00 pm"]
       }
     ]
   },
@@ -75,6 +135,31 @@
         "name": "Dr. Bob",
         "providerID": 1,
 
+        "times": ["12:30 pm", "1:30 pm", "2:00 pm"]
+      },
+      {
+        "name": "Dr. Nick",
+        "providerID": 3,
+        "times": ["10:30am", "11:00am", "12:30 pm", "1:30 pm", "4:00 pm"]
+      },
+      {
+        "name": "Dr. Vicky",
+        "providerID": 8,
+        "times": ["12:30 pm", "1:30 pm", "2:00 pm"]
+      },
+      {
+        "name": "Dr. Richard",
+        "providerID": 5,
+        "times": ["12:30 pm", "1:30 pm", "5:00 pm"]
+      },
+      {
+        "name": "Dr. Nancy",
+        "providerID": 6,
+        "times": ["10:30am", "11:00am", "12:30 pm", "1:30 pm", "4:00 pm"]
+      },
+      {
+        "name": "Dr. Patton",
+        "providerID": 7,
         "times": ["12:30 pm", "1:30 pm", "2:00 pm"]
       }
     ]
@@ -102,6 +187,21 @@
         "providerID": 1,
 
         "times": ["12:30 pm", "1:30 pm", "3:00 pm"]
+      },
+      {
+        "name": "Dr. Nancy",
+        "providerID": 6,
+        "times": ["10:30am", "11:00am", "12:30 pm", "1:30 pm", "4:00 pm"]
+      },
+      {
+        "name": "Dr. Patton",
+        "providerID": 7,
+        "times": ["12:30 pm", "1:30 pm", "2:00 pm"]
+      },
+      {
+        "name": "Dr. Vicky",
+        "providerID": 8,
+        "times": ["12:30 pm", "1:30 pm", "5:00 pm"]
       }
     ]
   },
@@ -111,9 +211,28 @@
 
     "availability": [
       {
-        "name": "Dr. Bob",
-        "providerID": 1,
-
+        "name": "Dr. Nick",
+        "providerID": 3,
+        "times": ["10:30am", "11:00am", "12:30 pm", "1:30 pm", "4:00 pm"]
+      },
+      {
+        "name": "Dr. Gayle",
+        "providerID": 4,
+        "times": ["12:30 pm", "1:30 pm", "2:00 pm"]
+      },
+      {
+        "name": "Dr. Nancy",
+        "providerID": 6,
+        "times": ["10:30am", "11:00am", "12:30 pm", "1:30 pm", "4:00 pm"]
+      },
+      {
+        "name": "Dr. Patton",
+        "providerID": 7,
+        "times": ["12:30 pm", "1:30 pm", "2:00 pm"]
+      },
+      {
+        "name": "Dr. Vicky",
+        "providerID": 8,
         "times": ["12:30 pm", "1:30 pm", "5:00 pm"]
       }
     ]
