@@ -54,8 +54,8 @@ export default function CalendarModal(props: any) {
               mode={'date'}
               display='inline'
               onChange={onChange}
-              maximumDate={new Date(2025, 4, 18)}
-              minimumDate={new Date(2025, 4, 9)}
+              maximumDate={new Date(2025, 4, 21)}
+              minimumDate={new Date(2025, 4, 12)}
             />
           </View>
         </Modal>
