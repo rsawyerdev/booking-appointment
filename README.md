@@ -1,50 +1,61 @@
-# Welcome to your Expo app 👋
+# React Native Appointment Scheduling Application
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Installation Instructions
 
-## Get started
+### Install on physical device
 
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+- clone the repository by running the following command in your terminal:
 
 ```bash
-npm run reset-project
+git clone git@github.com:rsawyerdev/booking-appointment.git
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+- open the Appointment Scheduling project in your favorite IDE
 
-## Learn more
+- run the following in the root directory of the project:
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
+npm install
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- run the following in the root directory of your project:
 
-## Join the community
+```bash
+npx expo start
+```
 
-Join our community of developers creating universal apps.
+once started, a QR code will appear
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- install the 'Expo Go' application on your device.
+
+- scan the QR code with your device. This will open the app in the 'Expo Go' application.
+
+### Install on emulator/simulator
+
+#### please be sure to have xCode or Android Studio installed
+
+- clone the repository by running the following command in your terminal:
+
+```bash
+git clone git@github.com:rsawyerdev/booking-appointment.git
+```
+
+- open the Appointment Scheduling project in your favorite IDE
+
+- run the following in the root directory of the project:
+
+```bash
+npm install
+```
+
+- run the following in the root directory of your project:
+
+```bash
+npx expo start --ios
+```
+
+or
+
+```bash
+npx expo start --android
+```

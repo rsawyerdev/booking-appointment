@@ -1,6 +1,6 @@
 [
   {
-    "date": "5/9/2025",
+    "date": "5/18/2025",
     "id": "1",
     "availability": [
       {
@@ -8,17 +8,13 @@
         "providerID": 1,
         "times": [
           "12:30 pm",
-          "1:30 pm",
           "1:00 pm",
-          "12:30 pm",
+
           "1:30 pm",
-          "1:00 pm",
-          "12:30 pm",
-          "1:30 pm",
-          "1:00 pm",
-          "12:30 pm",
-          "1:30 pm",
-          "1:00 pm"
+          "2:30 pm",
+          "3:00 pm",
+
+          "4:30 pm"
         ]
       },
       {
@@ -29,22 +25,22 @@
       {
         "name": "Dr. Nick",
         "providerID": 3,
-        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+        "times": ["2:30 pm", "3:30 pm", "4:00 pm"]
       },
       {
         "name": "Dr. Gayle",
         "providerID": 4,
-        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+        "times": ["12:30 pm", "1:30 pm", "3:00 pm"]
       },
       {
         "name": "Dr. Richard",
         "providerID": 5,
-        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+        "times": ["12:30 pm", "1:30 pm", "5:00 pm"]
       }
     ]
   },
   {
-    "date": "5/10/2025",
+    "date": "5/19/2025",
 
     "id": "2",
 
@@ -53,20 +49,20 @@
         "name": "Dr. Bob",
         "providerID": 1,
 
-        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+        "times": ["12:30 pm", "1:30 pm", "4:00 pm"]
       }
     ]
   },
   {
     "id": "3",
-    "date": "5/11/2025",
+    "date": "5/20/2025",
 
     "availability": [
       {
         "name": "Dr. Bob",
         "providerID": 1,
 
-        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+        "times": ["12:30 pm", "2:30 pm", "6:00 pm"]
       }
     ]
   },
@@ -79,7 +75,7 @@
         "name": "Dr. Bob",
         "providerID": 1,
 
-        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+        "times": ["12:30 pm", "1:30 pm", "2:00 pm"]
       }
     ]
   },
@@ -92,7 +88,7 @@
         "name": "Dr. Bob",
         "providerID": 1,
 
-        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+        "times": ["12:30 pm", "1:30 pm", "4:00 pm"]
       }
     ]
   },
@@ -105,7 +101,7 @@
         "name": "Dr. Bob",
         "providerID": 1,
 
-        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+        "times": ["12:30 pm", "1:30 pm", "3:00 pm"]
       }
     ]
   },
@@ -118,7 +114,7 @@
         "name": "Dr. Bob",
         "providerID": 1,
 
-        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+        "times": ["12:30 pm", "1:30 pm", "5:00 pm"]
       }
     ]
   },
@@ -129,22 +125,22 @@
       {
         "name": "Dr. Sally",
         "providerID": 2,
-        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+        "times": ["12:30 pm", "1:30 pm", "6:00 pm"]
       },
       {
         "name": "Dr. Nick",
         "providerID": 3,
-        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+        "times": ["10:30am", "11:00am", "12:30 pm", "1:30 pm", "4:00 pm"]
       },
       {
         "name": "Dr. Gayle",
         "providerID": 4,
-        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+        "times": ["12:30 pm", "1:30 pm", "2:00 pm"]
       },
       {
         "name": "Dr. Richard",
         "providerID": 5,
-        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+        "times": ["12:30 pm", "1:30 pm", "5:00 pm"]
       }
     ]
   },
@@ -155,26 +151,17 @@
       {
         "name": "Dr. Bob",
         "providerID": 1,
-        "times": [
-          "12:30 pm",
-          "1:30 pm",
-          "1:00 pm",
-          "1:30 pm",
-          "1:00 pm",
-          "12:30 pm",
-          "1:30 pm",
-          "1:00 pm"
-        ]
+        "times": ["12:30 pm", "1:30 pm", "2:30 pm", "4:00 pm"]
       },
       {
         "name": "Dr. Gayle",
         "providerID": 4,
-        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+        "times": ["12:30 pm", "1:30 pm", "6:00 pm"]
       },
       {
         "name": "Dr. Richard",
         "providerID": 5,
-        "times": ["12:30 pm", "1:30 pm", "1:00 pm"]
+        "times": ["12:30 pm", "1:30 pm", "8:00 pm"]
       }
     ]
   }
