@@ -1,7 +1,8 @@
 import { useProviderStore } from '@/store/providerStore';
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { useState } from 'react';
-import { Alert, Modal, Pressable, Text, View } from 'react-native';
+import { Alert, Modal, Pressable, StyleSheet, Text, View } from 'react-native';
 
 export default function CalendarModal(props: any) {
   const { dateSelected, setDate, setProvidersAvailable } = props;
@@ -37,28 +38,14 @@ export default function CalendarModal(props: any) {
     <View>
       {show ? (
         <Modal
-          style={{
-            backgroundColor: 'white',
-            marginTop: 0,
-          }}
+          style={styles.modalContainer}
           animationType='fade'
           transparent={true}
           statusBarTranslucent={true}
         >
-          <View
-            style={{
-              // backgroundColor: 'rgba(0, 0, 0, 0.6)',
-              marginTop: 120,
-              marginLeft: 30,
-              marginRight: 40,
-            }}
-          >
+          <View style={styles.calendarContainer}>
             <DateTimePicker
-              style={{
-                backgroundColor: 'white',
-                borderWidth: 1,
-                borderColor: 'rgba(0, 0, 0, 0.1)',
-              }}
+              style={styles.datePicker}
               testID='dateTimePicker'
               value={dateSelected}
               mode={'date'}
@@ -70,14 +57,37 @@ export default function CalendarModal(props: any) {
           </View>
         </Modal>
       ) : (
-        <Pressable onPress={() => setShow(true)}>
-          <Text>
+        <Pressable onPress={() => setShow(true)} style={styles.container}>
+          <Text style={styles.closedModalText}>
             {dateSelected
               ? dateSelected.toLocaleDateString('en-US', options)
               : 'select'}
           </Text>
+          <FontAwesome6 name='calendar-alt' size={48} color='#8ba49a' />
         </Pressable>
       )}
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: { alignItems: 'center' },
+  modalContainer: {
+    backgroundColor: 'white',
+    marginTop: 0,
+  },
+  closedModalText: {
+    fontFamily: 'bold',
+    color: '#8ba49a',
+  },
+  calendarContainer: {
+    marginTop: 120,
+    marginLeft: 30,
+    marginRight: 40,
+  },
+  datePicker: {
+    backgroundColor: 'white',
+    borderWidth: 1,
+    borderColor: 'rgba(0, 0, 0, 0.1)',
+  },
+});
